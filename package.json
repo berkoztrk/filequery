@@ -1,7 +1,10 @@
 {
   "name": "filequery",
   "version": "1.0.0",
-  "description": "",
+  "description": "Query files with size or type",
+  "repository": { "type": "git",
+    "url" : "git+https://github.com/berkoztrk/filequery.git"
+  },
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node test.js",
@@ -11,7 +14,11 @@
   },
   "keywords": [
     "file",
-    "query"
+    "query",
+    "utility",
+    "search",
+    "video",
+    "image"
   ],
   "author": "Berk Öztürk",
   "license": "ISC",
