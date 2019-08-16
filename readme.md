@@ -3,7 +3,7 @@ file query utility for nodejs
 
 ## Installation
 ``
-    npm i filequery
+    npm i @berkozturk/filequery
 ``
 
 ## Options
