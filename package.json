@@ -1,0 +1,30 @@
+{
+  "name": "filequery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node test.js",
+    "startdev": "nodemon --exec babel-node --exec \"npm run lint && node index\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint **/*.js"
+  },
+  "keywords": [
+    "file",
+    "query"
+  ],
+  "author": "Berk Öztürk",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "glob": "^7.1.4",
+    "lodash": "^4.17.15"
+  }
+}
