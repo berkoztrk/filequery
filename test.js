@@ -7,7 +7,7 @@ import filequery from './index';
     isRecursive: true,
     returnFolders: false,
     sizeQuery: '$lt 1 $GB',
-    fileType: 'video',
+    fileType: filequery.FileTypeOptions.video,
   });
   console.dir(files);
 })();

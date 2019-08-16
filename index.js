@@ -17,9 +17,14 @@ const SIZE_TYPES = {
   MB: '$MB',
   GB: '$GB',
 };
+const FILE_TYPE_OPTS = {
+  video: 'video',
+  image: 'image',
+};
 const DEFAULTS = {
   isRecursive: false,
   includeBaseDirectoryOnReturn: true,
+  returnFolders: true,
   extension: ALL,
   fileType: ALL,
   sizeQuery: '$gt 0 $BYTE',
@@ -34,6 +39,7 @@ class FileQuery {
    */
   constructor() {
     this.glob = glob;
+    this.FileTypeOptions = FILE_TYPE_OPTS;
   }
   /**
    * Singleton instance getter
@@ -91,6 +97,8 @@ class FileQuery {
       opts.returnFolders = DEFAULTS.returnFolders;
     } if (!this._existsInOptionAndNotEmpty(opts, 'extension')) {
       opts.extension = DEFAULTS.extension;
+    } else if (this._existsInOptionAndNotEmpty(opts, 'extension')) {
+      opts.extension = this._parseExtension(opts.extension);
     } if (!this._existsInOptionAndNotEmpty(opts, 'sizeQuery')) {
       opts.sizeQuery = DEFAULTS.sizeQuery;
     }
@@ -196,6 +204,13 @@ class FileQuery {
     } else if (type === SIZE_TYPES.GB) {
       return inBytes / Math.pow(1024, 3);
     }
+  }
+  /**
+   * @param  {string} extension - File extension
+   * @return {string} parsedExtension
+   */
+  _parseExtension(extension) {
+    return extension.startsWith('.') ? extension : `.${extension}`;
   }
 }
 
