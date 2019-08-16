@@ -1,5 +1,5 @@
 {
-  "name": "filequery",
+  "name": "@berkozturk/filequery",
   "version": "1.0.0",
   "description": "Query files with size or type",
   "repository": { "type": "git",
